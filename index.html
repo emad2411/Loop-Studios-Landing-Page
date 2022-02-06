@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- LINK THE MAIN STYLE FILE -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <title>Frontend Mentor | Loopstudios landing page</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" id="main-nav">
+        <div class="container navbar-content">
+          <a href="#" class="navbar-logo" title="logo"
+            ><img src="./assets/images/logo.svg" alt="loop studios logo"
+          /></a>
+
+          <div class="navbar-menu">
+            <input
+              type="checkbox"
+              class="navbar-menu-btn"
+              id="menu-btn"
+              title="toggler"
+            />
+            <label for="menu-btn" class="navbar-menu-icn">
+              <span class="navbar-menu-icn__line"></span>
+            </label>
+            <ul class="navbar-links">
+              <li class="navbar-link" style="--i: 0">
+                <a href="" class="link">About</a>
+              </li>
+              <li class="navbar-link" style="--i: 1">
+                <a href="" class="link">Careers</a>
+              </li>
+              <li class="navbar-link" style="--i: 2">
+                <a href="" class="link">Events</a>
+              </li>
+              <li class="navbar-link" style="--i: 3">
+                <a href="" class="link">Products</a>
+              </li>
+              <li class="navbar-link" style="--i: 4">
+                <a href="" class="link">Support</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="intro">
+        <div class="container">
+          <div class="intro-text">
+            <h1>
+              Immersive <br />
+              experiences <br />that <br />deliver
+            </h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="about">
+      <div class="container about-content">
+        <div class="about-img">
+          <img src="./assets/images/desktop/image-interactive.jpg" alt="" />
+        </div>
+        <div class="about-text">
+          <h2 class="about-text__title">
+            The leader in <br />
+            interactive VR
+          </h2>
+          <p class="about-text__dec">
+            Founded in 2011, Loopstudios has been producing world-class virtual
+            reality projects for some of the best companies around the globe.
+            Our award-winning creations have transformed businesses through
+            digital experiences that bind to their brand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div class="container">
+        <div class="projects-head">
+          <h2 class="projects-head__title">Our creations</h2>
+          <a
+            href="#"
+            class="btn btn-outline projects-head__btn"
+            title="view all projects"
+            >See all</a
+          >
+        </div>
+        <div class="projects-body">
+          <div class="projects-card" id="earth-card">
+            <picture>
+              <source
+                srcset="./assets/images/mobile/image-deep-earth.jpg"
+                media="(max-width:767px)"
+              />
+              <img
+                class="projects-card__img"
+                src="./assets/images/desktop/image-deep-earth.jpg"
+                alt=""
+              />
+            </picture>
+            <h3 class="projects-card__title">
+              Deep <br />
+              earth
+            </h3>
+          </div>
+
+          <div class="projects-card" id="arcade-card">
+            <picture>
+              <source
+                srcset="./assets/images/mobile/image-night-arcade.jpg"
+                media="(max-width:767px)"
+              />
+
+              <img
+                class="projects-card__img"
+                src="./assets/images/desktop/image-night-arcade.jpg"
+                alt=""
+              />
+            </picture>
+
+            <h3 class="projects-card__title">
+              Night
+              <br />
+              arcade
+            </h3>
+          </div>
+
+          <div class="projects-card" id="soccer-card">
+            <picture>
+              <source
+                srcset="./assets/images/mobile/image-soccer-team.jpg"
+                media="(max-width:767px)"
+              />
+
+              <img
+                class="projects-card__img"
+                src="./assets/images/desktop/image-soccer-team.jpg"
+                alt=""
+              />
+            </picture>
+
+            <h3 class="projects-card__title">
+              Soccer<br />
+              team VR
+            </h3>
+          </div>
+
+          <div class="projects-card" id="grid-card">
+            <picture>
+              <source
+                srcset="./assets/images/mobile/image-grid.jpg"
+                media="(max-width:767px)"
+              />
+
+              <img
+                class="projects-card__img"
+                src="./assets/images/desktop/image-grid.jpg"
+                alt=""
+              />
+            </picture>
+
+            <h3 class="projects-card__title">
+              The<br />
+              grid
+            </h3>
+          </div>
+
+          <div class="projects-card" id="above-card">
+            <picture>
+              <source
+                srcset="./assets/images/mobile/image-from-above.jpg"
+                media="(max-width:767px)"
+              />
+
+              <img
+                class="projects-card__img"
+                src="./assets/images/desktop/image-from-above.jpg"
+                alt=""
+              />
+            </picture>
+
+            <h3 class="projects-card__title">
+              From up <br />
+              above VR
+            </h3>
+          </div>
+
+          <div class="projects-card" id="pocket-card">
+            <picture>
+              <source
+                srcset="./assets/images/mobile/image-pocket-borealis.jpg"
+                media="(max-width:767px)"
+              />
+
+              <img
+                class="projects-card__img"
+                src="./assets/images/desktop/image-pocket-borealis.jpg"
+                alt=""
+              />
+            </picture>
+
+            <h3 class="projects-card__title">
+              Pocket <br />
+              borealis
+            </h3>
+          </div>
+
+          <div class="projects-card" id="curiosity-card">
+            <picture>
+              <source
+                srcset="./assets/images/mobile/image-curiosity.jpg"
+                media="(max-width:767px)"
+              />
+
+              <img
+                class="projects-card__img"
+                src="./assets/images/desktop/image-curiosity.jpg"
+                alt=""
+              />
+            </picture>
+
+            <h3 class="projects-card__title">
+              The <br />
+              curiosity
+            </h3>
+          </div>
+
+          <div class="projects-card" id="fisheye-card">
+            <picture>
+              <source
+                srcset="./assets/images/mobile/image-fisheye.jpg"
+                media="(max-width:767px)"
+              />
+
+              <img
+                class="projects-card__img"
+                src="./assets/images/desktop/image-fisheye.jpg"
+                alt=""
+              />
+            </picture>
+
+            <h3 class="projects-card__title">
+              Make it <br />
+              fisheye
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <nav class="footer-nav">
+          <div class="nav-content">
+            <a href="#" class="footer-nav__logo" title="logo"
+              ><img src="./assets/images/logo.svg" alt="loop studios logo"
+            /></a>
+            <!-- prettier-ignore -->
+            <ul class="footer-nav__links">
+              <li class="footer-nav__link"><a href="" class="link">About</a></li>
+              <li class="footer-nav__link"><a href="" class="link">Careers</a></li>
+              <li class="footer-nav__link"><a href="" class="link">Events</a></li>
+              <li class="footer-nav__link"><a href="" class="link">Products</a></li>
+              <li class="footer-nav__link"><a href="" class="link">Support</a></li>
+            <!-- prettier-ignore -->
+
+            </ul>
+          </div>
+        </nav>
+
+        <div class="footer-social">
+          <!-- prettier-ignore -->
+          <div class="footer-social__logos">
+            <div  class="link"><img src="./assets/images/icon-facebook.svg" alt="" class="logo"></div>
+            <div class="link"><img src="./assets/images/icon-twitter.svg" alt="" class="logo"></div>
+            <div class="link"><img src="./assets/images/icon-pinterest.svg" alt="" class="logo"></div>
+            <div class="link"><img src="./assets/images/icon-instagram.svg" alt="" class="logo"></div>
+            <!-- prettier-ignore -->
+          </div>
+          <div class="footer-social__rights">
+            <span>&copy 2021 Loopstudios. All rights reserved.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 
+
+   -->
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

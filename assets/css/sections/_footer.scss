@@ -1,0 +1,54 @@
+@use "../components/buttons" as *;
+@use "../base/variables" as *;
+@use "../helpers/mixins" as *;
+
+.footer {
+  background-color: black;
+  padding: 2.5rem 0;
+
+  &-content {
+    @include flex(space-between, center);
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  &-nav {
+    &__links {
+      @include flex(flex-start, center);
+      gap: 1rem;
+      margin-top: 1.5rem;
+      @media (max-width: 767px) {
+        @include flex(center, center, column);
+      }
+    }
+
+    &__link a {
+      color: white !important;
+    }
+  }
+
+  &-social {
+    color: white;
+    &__logos {
+      @include flex(flex-end, center);
+      gap: 1.2rem;
+      @media (max-width: 767px) {
+        justify-content: center;
+        margin-top: 2rem;
+      }
+      .logo {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__rights {
+      margin-top: 1.5rem;
+      opacity: 0.8;
+      line-height: 100%;
+    }
+  }
+}

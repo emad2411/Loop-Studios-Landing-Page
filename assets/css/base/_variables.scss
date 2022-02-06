@@ -1,0 +1,40 @@
+// theme color
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 55%);
+$very-dark-gray: hsl(0, 0%, 41%);
+
+//spacing
+
+$spacing: (
+  small: 0.5,
+  regular: 1,
+  medium: 2.5,
+  large: 4,
+  xlarg: 8,
+);
+
+//font sizing and alignment
+
+$body-font-size: 15px;
+
+// screen sizes
+
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+//container size
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);

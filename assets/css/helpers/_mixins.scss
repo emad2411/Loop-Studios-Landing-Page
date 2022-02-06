@@ -1,0 +1,57 @@
+@use "../base/variables" as *;
+
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin absolute($top: 0, $right: auto, $bottom: auto, $left: 0) {
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+}
+
+@mixin element(
+  $element-name: before,
+  $top: 0,
+  $right: auto,
+  $bottom: auto,
+  $left: 0
+) {
+  @if ($element-name==before) {
+    &::before {
+      content: "";
+      @include absolute($top, $right, $bottom, $left);
+      @content;
+    }
+  } @else if ($element-name==after) {
+    &::after {
+      content: "";
+
+      @include absolute($top, $right, $bottom, $left);
+      @content;
+    }
+  }
+}
+
+@mixin container-breakpoints {
+  @each $name, $point in $breakpoints {
+    .container {
+      @media (min-width: $point) {
+        width: map-get($map: $container-max-widths, $key: $name);
+      }
+    }
+  }
+}
+
+@mixin overlay($color: #000, $alpha: 0.3) {
+  @include absolute();
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color, $alpha);
+  z-index: 2;
+}

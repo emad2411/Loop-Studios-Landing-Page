@@ -1,0 +1,193 @@
+@use "../base/variables" as *;
+@use "../helpers/mixins" as *;
+@use "../helpers/animations" as *;
+
+header {
+  min-height: 65vh;
+  background-image: url("../images/desktop/image-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &:before {
+    content: "";
+    @include overlay();
+  }
+
+  @media (max-width: 767px) {
+    background-image: url("../images/mobile/image-hero.jpg");
+    min-height: 100vh;
+  }
+}
+
+.navbar {
+  height: 72px;
+  padding: 1.25rem 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.4s ease-in;
+  &-content {
+    height: 100%;
+    @include flex(space-between, center);
+  }
+
+  &.scrolled {
+    background-color: $black !important;
+  }
+
+  &-logo {
+    @media (max-width: 767px) {
+      max-width: 150px;
+      z-index: 1100;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &-menu {
+    &-icn {
+      display: none;
+
+      @media (max-width: 767px) {
+        position: relative;
+        z-index: 1100;
+        @include flex(center, center, column);
+        width: 35px;
+        height: 35px;
+        &__line {
+          position: relative;
+          display: block;
+          background-color: white;
+          height: 2px;
+          width: 100%;
+          border-radius: 4px;
+          animation: midClose 0.2s backwards;
+          animation-direction: reverse;
+
+          @include element(before, -10px, 0, auto, 0) {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            border-radius: 4px;
+            animation: topClose 0.2s backwards;
+            animation-direction: reverse;
+          }
+          @include element(after, auto, 0, -10px, 0) {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+            border-radius: 4px;
+            animation: btmClose 0.2s backwards;
+            animation-direction: reverse;
+          }
+        }
+      }
+    }
+    &-btn {
+      display: none;
+      &:checked ~ .navbar-links {
+        clip-path: circle(100% at center);
+        opacity: 1;
+        .navbar-link {
+          transform: translateX(0);
+        }
+      }
+      &:checked ~ .navbar-menu-icn {
+        .navbar-menu-icn__line {
+          animation: midOpen 0.2s forwards;
+        }
+        .navbar-menu-icn__line::before {
+          animation: topOpen 0.2s forwards;
+        }
+        .navbar-menu-icn__line::after {
+          animation: btmOpen 0.2s forwards;
+        }
+      }
+    }
+  }
+
+  &-links {
+    @include flex(center, center);
+    z-index: 1001;
+
+    @media (max-width: 767px) {
+      @include absolute();
+      height: 100vh;
+      width: 100vw;
+      clip-path: circle(100px at top right);
+      transition: opacity 1s 0.4s, clip-path 1s ease-in;
+      opacity: 0;
+      background-color: $black;
+      padding: 0 1rem;
+      flex-direction: column;
+    }
+  }
+  &-link {
+    z-index: 1001;
+    padding: 0 1rem;
+    @media (max-width: 767px) {
+      width: 100%;
+      transform: translateX(110%);
+      transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition-delay: calc(var(--i) * 0.3s);
+    }
+
+    a {
+      position: relative;
+      color: $white !important;
+      display: block;
+      transition: 0.1s;
+      font-size: 1.5rem;
+      width: 100%;
+      text-align: center;
+
+      @media (max-width: 767px) {
+        margin: 1.5rem 0;
+        font-size: 2.5rem;
+      }
+      @media (max-width: 767px) and (orientation: landscape) {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+      }
+
+      &:hover {
+        font-weight: 700 !important;
+      }
+    }
+  }
+}
+
+.intro {
+  @include absolute();
+  @include flex(flex-start);
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+
+  @media (max-width: 767px) {
+    justify-content: center;
+  }
+
+  &-text {
+    padding: 1rem 2rem;
+    border: 2px solid white;
+    max-width: 500px;
+    @media (max-width: 767px) {
+      max-width: 300px;
+      & h1 {
+        font-size: 2rem !important;
+      }
+    }
+    & h1 {
+      font-size: 3rem;
+      color: white;
+      font-weight: lighter;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  }
+}
